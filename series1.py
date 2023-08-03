@@ -70,3 +70,32 @@ mediana_filtrada = serie_filtrada.median()
 
 print("Mediana con dos condiciones:", mediana_filtrada)
 
+pasar string de minúsculas a mayúsculas: 
+import pandas as pd
+#ponemos aqui los strings, proque necesitamos comparar con los strings y no con numeros.
+datos = ['a', 'b', 'c', 'd', 'e', 'f']
+
+s2 = pd.Series(datos)
+print(s2)
+
+x = (s2.str.upper())
+print(x)
+
+
+#Valor absoluto y poner en mayúsculas:
+import pandas as pd
+def valor_ab(x):
+    if x<0:
+        return x*(-1)
+    return x
+datos=[-10,-20,30,-40,50,60]
+indices=['A','B','C','D','E','F']
+s=pd.Series(datos,index=indices)
+s_va=s.map(valor_ab)
+print(s_va)
+
+datos=['a','b','c','d','e','f']
+indices1=['0','1','2','3','4','5']
+s1=pd.Series(datos,index=indices1)
+print(s1.str.upper())
+
