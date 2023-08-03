@@ -99,3 +99,28 @@ indices1=['0','1','2','3','4','5']
 s1=pd.Series(datos,index=indices1)
 print(s1.str.upper())
 
+usando replace para cambiar un string:import pandas as pd
+
+#ponemos aqui los strings, proque necesitamos comparar con los strings y no con numeros.
+datos = ['azul', 'verde', 'amarillo', 'rojo', 'verde', 'blanco', 'verde']
+
+s2 = pd.Series(datos)
+
+# Reemplazar 'verde' por 'verde claro' en la Serie s2
+s2 = s2.replace('verde', 'verde claro')
+
+print(s2)
+#Otra forma (usando map):
+import pandas as pd
+
+# Datos como una lista
+datos = ['rojo', 'verde', 'azul', 'amarillo']
+
+# Creamos la Series con los datos
+serie_colores = pd.Series(data=datos)
+
+# Usamos map para reemplazar 'verde' por 'verde claro'
+serie_colores_reemplazados = serie_colores.map(lambda x: 'verde claro' if x == 'verde' else x)
+
+print(serie_colores_reemplazados)
+
