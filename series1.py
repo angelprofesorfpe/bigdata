@@ -154,3 +154,22 @@ s3 = s2.round(2)
 print(s3)
 
 
+
+#Uso de filter:
+# Datos como una lista
+datos = [1, 2, 3, 4, 5, 6, 7, 8]
+
+# Creamos la Series con los datos
+serie_datos = pd.Series(data=datos)
+
+# Definimos una función para filtrar los valores pares
+def es_par(numero):
+    return numero % 2 == 0
+
+# Usamos filter para obtener los valores pares de la Series
+serie_pares = pd.Series(filter(es_par, serie_datos))
+
+print(serie_pares)
+
+
+
