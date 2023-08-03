@@ -141,4 +141,16 @@ serie_redondeada = serie_numeros.map(lambda x: round(x, 2))
 
 print(serie_redondeada)
 
+reducción de decimales con round:
+import pandas as pd
+#ponemos aquí los strings, porque necesitamos comparar con los strings y no con números.
+datos = [3.41781243, 4.12131422, 1.788882, 8.999912]
+
+s2 = pd.Series(datos)
+
+#Otra forma más simple de Reemplazar 'verde' por 'verde claro' en la Serie s2
+s3 = s2.round(2)
+
+print(s3)
+
 
