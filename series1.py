@@ -124,3 +124,21 @@ serie_colores_reemplazados = serie_colores.map(lambda x: 'verde claro' if x == '
 
 print(serie_colores_reemplazados)
 
+
+
+#Redondear todos los valores de una Series a dos decimales:
+
+import pandas as pd
+
+# Datos como una lista
+datos = [3.14159, 2.71828, 1.41421, 0.57721]
+
+# Creamos la Series con los datos
+serie_numeros = pd.Series(data=datos)
+
+# Usamos map para redondear cada elemento a dos decimales
+serie_redondeada = serie_numeros.map(lambda x: round(x, 2))
+
+print(serie_redondeada)
+
+
