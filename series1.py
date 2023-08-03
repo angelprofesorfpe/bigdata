@@ -32,3 +32,41 @@ print(x.mean())
 print(x.std())
 print('moda=',x.mode())
 print(x.median())
+
+
+datos = [10, 20, 30, 40, 50]
+etiquetas = ['A', 'B', 'C', 'D', 'E']
+
+# Creamos la Series con los datos y etiquetas
+serie_ejercicio = pd.Series(data=datos, index=etiquetas)
+
+# Seleccionamos los elementos mayores a 30
+elementos_mayores_a_30 = serie_ejercicio[serie_ejercicio > 30]
+print("Elementos mayores a 30:")
+print(elementos_mayores_a_30)
+
+
+serie_ejercicio = pd.Series(data=['a','b','c','d', 'e', 'ef'])
+elementos_mayores_a_30 = serie_ejercicio[serie_ejercicio > 'e']
+print("Elementos mayores a 30:")
+print(elementos_mayores_a_30)
+
+
+# Datos como una lista
+datos = [1, 2, 3, 3, 4, 4, 4, 5]
+
+# Creamos la Series con los datos
+serie_datos = pd.Series(data=datos)
+
+# Condiciones: Filtramos los datos que sean mayores o iguales a 3 y menores o iguales a 5
+condicion_1 = serie_datos >= 3
+condicion_2 = serie_datos <= 5
+
+# Aplicamos las dos condiciones
+serie_filtrada = serie_datos[condicion_1 & condicion_2]
+
+# Calculamos la mediana de la serie filtrada
+mediana_filtrada = serie_filtrada.median()
+
+print("Mediana con dos condiciones:", mediana_filtrada)
+
