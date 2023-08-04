@@ -37,6 +37,16 @@ df['Divide'] = np.divide(df['col1'], df['col2'])
 df['Divide2'] = df['col1'] / df['col2']
 print(df)
 
+# Definir una función personalizada que devuelve el producto de dos columnas
+def f(x, y, z):
+    if y==0:
+        return 0
+    return x / y - z
+
+# Aplicar la función a las columnas A y B usando Numpy
+df['nuevaCol'] = np.vectorize(f)(df['col1'], df['col2'], df['col3'])
+print(df)
+
 
 
 
