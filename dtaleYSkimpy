@@ -1,0 +1,31 @@
+Instalar estas librerías:
+pip install skimpy
+pip install dtale
+
+
+import pandas as pd
+#import dtale
+#import dtale.app as dtale_app
+from skimpy import skim
+
+
+# URL del conjunto de datos Wine
+url_wine = 'https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data'
+
+# Definir nombres de columnas para el DataFrame
+column_names = ['class', 'alcohol', 'malic_acid', 'ash', 'alcalinity_of_ash',
+                'magnesium', 'total_phenols', 'flavanoids', 'nonflavanoid_phenols',
+                'proanthocyanins', 'color_intensity', 'hue', 'od280_od315_of_diluted_wines',
+                'proline']
+
+# Descargar el conjunto de datos y leerlo en un DataFrame
+df_wine = pd.read_csv(url_wine, header=None, names=column_names)
+
+# Visualizar las primeras filas del DataFrame
+print(df_wine.head())
+print(df_wine.info())
+print(df_wine.describe())
+
+#dtale_app.USE_COLAB = True
+#d = dtale.show(df_wine, host='localhost')
+skim(df_wine)
