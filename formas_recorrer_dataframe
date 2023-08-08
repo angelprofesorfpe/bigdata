@@ -36,7 +36,7 @@ print(df.shape[0]) #te da el numero de filas del dataframe
 for index, row in tqdm(df.iterrows(), total=df.shape[0]):
     print("index",index)
     print("row",row)
-    print("row['col1']=", row['col1'])
+    print("row['Col1']=", row['Col1'])
 
 
 for row in tqdm(df.itertuples(), total=df.shape[0]):
