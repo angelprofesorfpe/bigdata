@@ -8,11 +8,6 @@ import string
 from tqdm import tqdm
 import time
 
-"""
-FORMA 1: USANDO df.iterrows()
-
-"""
-
 # Variable para concatenar los datos de todas las categorías 
 all_characters = string.ascii_letters + string.digits + string.punctuation
 
@@ -30,15 +25,57 @@ print(df)
 
 print(df.shape[0]) #te da el numero de filas del dataframe
 
-# Ejemplo de bucle con tqdm
 
 
+"""
+
+FORMA 1: USANDO df.iterrows()
+
+"""
+
+# Ejemplo de bucle con tqdm para la barra de progreso
 for index, row in tqdm(df.iterrows(), total=df.shape[0]):
     print("index",index)
     print("row",row)
     print("row['Col1']=", row['Col1'])
 
 
+
+"""
+
+FORMA 2: USANDO df.itertuples()
+
+"""
+
+
+
+# Ejemplo de bucle con tqdm para la barra de progreso
 for row in tqdm(df.itertuples(), total=df.shape[0]):
     print("row",row)
     print("row.Col1")
+
+
+"""
+
+FORMA 3: USANDO df.values() para iterar sobre una lista
+
+"""
+
+# Ejemplo de bucle con tqdm para la barra de progreso
+for row in tqdm(df.values, total=df.shape[0]):
+    print("row:", row)
+    print("row[0]:", row[0])
+
+
+"""
+
+FORMA 4: iterando sobre un diccionario 
+
+"""
+# Ejemplo de bucle con tqdm para la barra de progreso
+df_dict = df.to_dict('records')
+# Ejemplo de bucle con tqdm
+for row in tqdm(df_dict, total=df.shape[0]):
+    print("row:", row)
+    print("row['Col1']:", row['Col1'])
+
