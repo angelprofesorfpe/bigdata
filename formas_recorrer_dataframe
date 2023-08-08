@@ -73,7 +73,20 @@ FORMA 4: iterando sobre un diccionario
 
 """
 # Ejemplo de bucle con tqdm para la barra de progreso
-df_dict = df.to_dict('records')
+df_dict = df.to_dict('records') #parámetros posibles: 'dict', 'list', 'series', 'split', 'records', 'index')
+"""
+El parámetro determina el tipo de valor del diccionario.
+
+'dict' (default) : dict like {column -> {index -> value}}
+'list' : dict like {column -> [values]}
+'series' : dict like {column -> Series(values)}
+'split' : dict like {‘index’ -> [index], ‘columns’ -> [columns], ‘data’ -> [values]}
+'tight' : dict like {‘index’ -> [index], ‘columns’ -> [columns], ‘data’ -> [values], ‘index_names’ -> [index.names], ‘column_names’ -> [column.names]}
+'records' : list like [{column -> value}, … , {column -> value}]
+'index' : dict like {index -> {column -> value}}
+
+"""
+
 # Ejemplo de bucle con tqdm
 for row in tqdm(df_dict, total=df.shape[0]):
     print("row:", row)
