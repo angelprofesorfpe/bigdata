@@ -5,6 +5,8 @@
 import pandas as pd
 import random
 import string
+from tqdm import tqdm
+import time
 
 """
 FORMA 1: USANDO df.iterrows()
@@ -26,10 +28,7 @@ df = pd.DataFrame(data, columns=[f'Columna {i+1}' for i in range(num_columns)])
 # Imprimir el DataFrame
 print(df)
 
-from tqdm import tqdm
-import time
-
-print(df.shape[0])
+print(df.shape[0]) #te da el numero de filas del dataframe
 
 # Ejemplo de bucle con tqdm
 
