@@ -1,0 +1,39 @@
+%%time
+
+# %%time es una line magic function y sirve para contar el tiempo de ejecución de una celda de un cuaderno de Jupiter.
+
+import pandas as pd
+import random
+import string
+
+"""
+FORMA 1: USANDO df.iterrows()
+
+"""
+
+# Variable para concatenar los datos de todas las categorías 
+all_characters = string.ascii_letters + string.digits + string.punctuation
+
+num_rows = 1000
+num_columns = 3
+
+# Generar los datos utilizando caracteres aleatorios de todas las categorías
+data = [[random.choice(all_characters) for _ in range(num_columns)] for _ in range(num_rows)]
+
+# Crear un DataFrame con los datos generados
+df = pd.DataFrame(data, columns=[f'Columna {i+1}' for i in range(num_columns)])
+
+# Imprimir el DataFrame
+print(df)
+
+from tqdm import tqdm
+import time
+
+print(df.shape[0])
+
+# Ejemplo de bucle con tqdm
+
+
+for index, row in tqdm(df.iterrows(), total=df.shape[0]):
+    print("index",index)
+    print("row",row)
