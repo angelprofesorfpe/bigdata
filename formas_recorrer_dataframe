@@ -23,7 +23,7 @@ num_columns = 3
 data = [[random.choice(all_characters) for _ in range(num_columns)] for _ in range(num_rows)]
 
 # Crear un DataFrame con los datos generados
-df = pd.DataFrame(data, columns=[f'Columna {i+1}' for i in range(num_columns)])
+df = pd.DataFrame(data, columns=[f'Col{i+1}' for i in range(num_columns)])
 
 # Imprimir el DataFrame
 print(df)
@@ -36,3 +36,9 @@ print(df.shape[0]) #te da el numero de filas del dataframe
 for index, row in tqdm(df.iterrows(), total=df.shape[0]):
     print("index",index)
     print("row",row)
+    print("row['col1']=", row['col1'])
+
+
+for row in tqdm(df.itertuples(), total=df.shape[0]):
+    print("row",row)
+    print("row.Col1")
